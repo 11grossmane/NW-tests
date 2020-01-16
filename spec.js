@@ -4,6 +4,7 @@ const round = require('lodash.round')
 let x = 1
 describe('test 1', () => {
   it('temperatue of UI matches API', () => {
+    //is this supposed to be a different lat,long than the API?
     browser.url('https://darksky.net/forecast/40.7506,-73.9971/us12/en')
     const elem = $('span.summary.swap')
     const text = elem.getText()
@@ -46,7 +47,6 @@ describe('test 2', () => {
         //do nothing, continue loop
         continue
       } else {
-        console.log('nextElem - elem', nextElem - elem)
         if (nextElem - elem !== 2) {
           difIsTwo = false
           //if the difference ever isn't two break
